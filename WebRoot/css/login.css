@@ -1,0 +1,49 @@
+body {
+	background-color: white
+}
+
+#logincontainer {
+	width: 600px;
+	height: 400px;
+	margin-top: 150px;
+	margin-left: 300px;
+}
+
+#login-top {
+	height: 50px;
+	width: 600px;
+}
+
+#login-left {
+	width: 300px;
+	height: 350px;
+	float: left;
+}
+
+#login-right {
+	margin-left: 350px;
+	margin-top: 150px;
+	padding: 5px;
+}
+
+.word_10p {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 10pt;
+	COLOR: #000000;
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+
+.font_9p {
+	FONT-SIZE: 9pt;
+	COLOR: #000000;
+	LINE-HEIGHT: 18px;
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+
+.title {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 9pt;
+	COLOR: #000000;
+	LINE-HEIGHT: 20px;
+	FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}

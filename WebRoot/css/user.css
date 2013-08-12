@@ -1,0 +1,45 @@
+@import "../js/lib/cbtree/themes/claro/claro.css";
+
+#orgPane {
+	width: 200px;
+	padding: 0px;
+}
+
+#orgToolbarPane {
+	padding: 0px;
+	height: 29px;
+}
+
+#orgTreePane {
+	padding: 0px;
+}
+
+#userPane {
+	width: 210px;
+	height: 100%;
+}
+
+#infoPane {
+	height: 200px
+}
+
+#userToolbarPane {
+	height: 29px;
+	padding: 0px;
+}
+
+/*
+#userToolbar {
+	padding: 0px;
+}
+*/
+#userGridPane {
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 5px;
+}
+
+#usergrid {
+	border: 0px;
+}

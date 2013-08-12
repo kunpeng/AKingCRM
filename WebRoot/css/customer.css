@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+@import "../js/lib/dojo/resources/dojo.css";
+
+@import "../js/lib/dijit/themes/claro/claro.css";
+
+@import "../js/lib/dojox/grid/enhanced/resources/claro/EnhancedGrid.css"
+	;
+
+.details td {
+	border-bottom: 1px dotted steelblue;
+	border-right: 1px dotted steelblue;
+	width: 100%
+}
+
+.dijitDialogPaneContentArea td {
+	text-align: right;
+}
+
+.dijitDialogPaneContentArea td input {
+	width: 100%
+}
+
+.dijitDialogPaneContentArea table table td {
+	width: 100%
+}
+
+#customerGridContainer {
+	padding: 0px;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+	<function>
+		<code>10000</code>
+		<name>客户列表</name>
+		<children>
+			<function>
+				<code>10010</code>
+				<name>添加</name>
+			</function>
+			<function>
+				<code>10020</code>
+				<name>删除</name>
+			</function>
+			<function>
+				<code>10030</code>
+				<name>修改</name>
+			</function>
+		</children>
+	</function>
+	<function>
+		<code>20000</code>
+		<name>业务联系</name>
+		<children>
+			<function>
+				<code>20010</code>
+				<name>添加</name>
+			</function>
+			<function>
+				<code>20020</code>
+				<name>删除</name>
+			</function>
+			<function>
+				<code>20030</code>
+				<name>修改</name>
+			</function>
+		</children>
+	</function>
+</functions>

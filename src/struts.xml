@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.action.extension" value="do" />
+
+	<include file="struts-default.xml"></include>
+	<!-- <package name="default" namespace="/" extends="struts-default"> <default-action-ref 
+		name="index" /> <action name="index"> <result name="success" type="redirectAction"> 
+		<param name="actionName">CustomerAction</param> <param name="namespace">/customer</param> 
+		</result> </action> </package> -->
+	<!-- Add packages here -->
+	<!-- 客户相关操作 -->
+	<package name="customer" namespace="/customer" extends="struts-default">
+
+		<action name="loadCustomer" class="com.aking.control.action.CustomerAction"
+			method="loadAll">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadByCate" class="com.aking.control.action.CustomerAction"
+			method="loadByCategory">
+			<result>/index.jsp</result>
+		</action>
+		<action name="savecustomer" class="com.aking.control.action.CustomerAction"
+			method="saveCustomer">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadCustomerById" class="com.aking.control.action.CustomerAction"
+			method="loadCustomerByID">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delCustomerByIDAction" class="com.aking.control.action.CustomerAction"
+			method="delCustomerByID">
+			<result>/index.jsp</result>
+		</action>
+
+		<!-- <action name="Login_*" method="{1}" class="example.Login"> <result 
+			name="input">/example/Login.jsp</result> <result type="redirectAction">Menu</result> 
+			</action> <action name="*" class="example.ExampleSupport"> <result>/example/{1}.jsp</result> 
+			</action> -->
+
+		<!-- Add actions here -->
+	</package>
+
+	<!-- 客户类型相关操作 -->
+	<package name="customerType" namespace="/customerType" extends="struts-default">
+		<action name="loadForComboAction" class="com.aking.control.action.CustomerTypeAction"
+			method="loadForCombo">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadForListAction" class="com.aking.control.action.CustomerTypeAction"
+			method="loadForList">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveCustomerType" class="com.aking.control.action.CustomerTypeAction"
+			method="saveCustomerType">
+			<result>/index.jsp</result>
+		</action>
+		<action name="updateCustomerType" class="com.aking.control.action.CustomerTypeAction"
+			method="updateCustomerType">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delCustomerType" class="com.aking.control.action.CustomerTypeAction"
+			method="delCustomerType">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 客户来源相关操作 -->
+	<package name="customerSource" namespace="/customerSource"
+		extends="struts-default">
+		<action name="loadForComboAction" class="com.aking.control.action.CustomerSourceAction"
+			method="loadForCombo">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadForListAction" class="com.aking.control.action.CustomerSourceAction"
+			method="loadForList">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveCustomerSource" class="com.aking.control.action.CustomerSourceAction"
+			method="saveCustomerSource">
+			<result>/index.jsp</result>
+		</action>
+		<action name="updateCustomerSource" class="com.aking.control.action.CustomerSourceAction"
+			method="updateCustomerSource">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delCustomerSource" class="com.aking.control.action.CustomerSourceAction"
+			method="delCustomerSource">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 国家相关操作 -->
+	<package name="country" namespace="/country" extends="struts-default">
+		<action name="loadForCombo" class="com.aking.control.action.CountryAction"
+			method="loadForCombo">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 省份相关操作 -->
+	<package name="province" namespace="/province" extends="struts-default">
+		<action name="loadForCombo" class="com.aking.control.action.ProvinceAction"
+			method="loadForCombo">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadAll4Combo" class="com.aking.control.action.ProvinceAction"
+			method="loadAll4Combo">
+			<result>/index.jsp</result>
+		</action>
+		<action name="getByCountry" class="com.aking.control.action.ProvinceAction"
+			method="getByCountry">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 城市相关操作 -->
+	<package name="city" namespace="/city" extends="struts-default">
+		<action name="loadForCombo" class="com.aking.control.action.CityAction"
+			method="loadForCombo">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadAll4Combo" class="com.aking.control.action.CityAction"
+			method="loadAll4Combo">
+			<result>/index.jsp</result>
+		</action>
+		<action name="getByProvince" class="com.aking.control.action.CityAction"
+			method="getByProvince">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 行业类别相关操作 -->
+	<package name="category" namespace="/category" extends="struts-default">
+		<action name="loadAll4Tree" class="com.aking.control.action.CategoryAction"
+			method="loadAll4Tree">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadCateByPid" class="com.aking.control.action.CategoryAction"
+			method="loadCateByPid">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadCategory" class="com.aking.control.action.CategoryAction"
+			method="loadAll">
+			<result>/index.jsp</result>
+		</action>
+		<action name="LoadList" class="com.aking.control.action.CategoryAction"
+			method="loadList">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadForComboAction" class="com.aking.control.action.CategoryAction"
+			method="loadForCombo">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveCategory" class="com.aking.control.action.CategoryAction"
+			method="saveCategory">
+			<result>/index.jsp</result>
+		</action>
+		<action name="updateCategory" class="com.aking.control.action.CategoryAction"
+			method="updateCategory">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delCategory" class="com.aking.control.action.CategoryAction"
+			method="delCategory">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 业务联系相关操作 -->
+	<package name="businessContact" namespace="/businessContact"
+		extends="struts-default">
+		<action name="loadByCustomer" class="com.aking.control.action.BusinessContactAction"
+			method="loadByCustomer">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadAll" class="com.aking.control.action.BusinessContactAction"
+			method="loadAll">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadFilterAction" class="com.aking.control.action.BusinessContactAction"
+			method="loadFilter">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveContact" class="com.aking.control.action.BusinessContactAction"
+			method="saveContact">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delContactByID" class="com.aking.control.action.BusinessContactAction"
+			method="delContactByID">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadContactByID" class="com.aking.control.action.BusinessContactAction"
+			method="loadContactByID">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 洽谈方式相关操作 -->
+	<package name="contactWay" namespace="/contactWay" extends="struts-default">
+		<action name="loadForCombo" class="com.aking.control.action.ContactWayAction"
+			method="loadForCombo">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadForList" class="com.aking.control.action.ContactWayAction"
+			method="loadForList">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveContactWay" class="com.aking.control.action.ContactWayAction"
+			method="saveContactWay">
+			<result>/index.jsp</result>
+		</action>
+		<action name="updateContactWay" class="com.aking.control.action.ContactWayAction"
+			method="updateContactWay">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delContactWay" class="com.aking.control.action.ContactWayAction"
+			method="delContactWay">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 活动主题相关操作 -->
+	<package name="activityTheme" namespace="/activityTheme"
+		extends="struts-default">
+		<action name="loadForCombo" class="com.aking.control.action.ActivityThemeAction"
+			method="loadForCombo">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadForList" class="com.aking.control.action.ActivityThemeAction"
+			method="loadForList">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveActivityTheme" class="com.aking.control.action.ActivityThemeAction"
+			method="saveActivityTheme">
+			<result>/index.jsp</result>
+		</action>
+		<action name="updateActivityTheme" class="com.aking.control.action.ActivityThemeAction"
+			method="updateActivityTheme">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delActivityTheme" class="com.aking.control.action.ActivityThemeAction"
+			method="delActivityTheme">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 组织机构操作 -->
+	<package name="org" namespace="/org" extends="struts-default">
+		<action name="loadAll4Tree" class="com.aking.control.action.OrgAction"
+			method="loadAll4Tree">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadByPId" class="com.aking.control.action.OrgAction"
+			method="loadByPId">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveOrg" class="com.aking.control.action.OrgAction"
+			method="saveOrg">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delOrg" class="com.aking.control.action.OrgAction"
+			method="delOrg">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 用户相关操作 -->
+	<package name="user" namespace="/user" extends="struts-default">
+		<action name="loadForCombo" class="com.aking.control.action.UserAction"
+			method="loadForCombo">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadListByOrgAction" class="com.aking.control.action.UserAction"
+			method="loadListByOrg">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveUser" class="com.aking.control.action.UserAction"
+			method="saveUser">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delUser" class="com.aking.control.action.UserAction"
+			method="delUser">
+			<result name="success" type="velocity">/main.jsp</result>
+			<result name="failure" type="redirect">/login.jsp</result>
+		</action>
+		<action name="updateUser" class="com.aking.control.action.UserAction"
+			method="updateUser">
+			<result>/index.jsp</result>
+		</action>
+		<action name="userlogin" class="com.aking.control.action.UserAction"
+			method="login">
+			<result name="success" type="redirect">/main.jsp</result>
+			<result name="failure" type="redirect">/login.jsp</result>
+		</action>
+		<action name="userlogout" class="com.aking.control.action.UserAction"
+			method="logout">
+			<result name="success" type="redirect">/login.jsp</result>
+		</action>
+		<action name="changeinfo" class="com.aking.control.action.UserAction"
+			method="changeInfo">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 客户联系人相关操作 -->
+	<package name="contactMan" namespace="/contactMan" extends="struts-default">
+		<action name="loadByCustomer" class="com.aking.control.action.ContactManAction"
+			method="loadByCustomer">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveMan" class="com.aking.control.action.ContactManAction"
+			method="saveMan">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delManByID" class="com.aking.control.action.ContactManAction"
+			method="delManByID">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadManByIDAction" class="com.aking.control.action.ContactManAction"
+			method="loadManByID">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 产品报价相关操作 -->
+	<package name="productQuote" namespace="/productQuote" extends="struts-default">
+		<action name="loadByCustomer" class="com.aking.control.action.ProductQuoteAction"
+			method="loadByCustomer">
+			<result>/index.jsp</result>
+		</action>
+		<action name="savaQuote" class="com.aking.control.action.ProductQuoteAction"
+			method="saveQuote">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delQuoteByID" class="com.aking.control.action.ProductQuoteAction"
+			method="delQuoteByID">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadQuoteByIDAction" class="com.aking.control.action.ProductQuoteAction"
+			method="loadQuoteByID">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 成交记录相关操作 -->
+	<package name="dealRecord" namespace="/dealRecord" extends="struts-default">
+		<action name="loadByCustomer" class="com.aking.control.action.DealRecordAction"
+			method="loadByCustomer">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveRecord" class="com.aking.control.action.DealRecordAction"
+			method="saveRecord">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delRecordByID" class="com.aking.control.action.DealRecordAction"
+			method="delRecordByID">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadRecordByID" class="com.aking.control.action.DealRecordAction"
+			method="loadRecordByID">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 售后回访相关操作 -->
+	<package name="afterVisit" namespace="/afterVisit" extends='struts-default'>
+		<action name="loadByCustomer" class="com.aking.control.action.AfterVisitAction"
+			method="loadByCustomer">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveVisit" class="com.aking.control.action.AfterVisitAction"
+			method="saveVisit">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delVisitByID" class="com.aking.control.action.AfterVisitAction"
+			method="delVisitByID">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadVisitByIDAction" class="com.aking.control.action.AfterVisitAction"
+			method="loadVisitByID">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 投诉反馈相关操作 -->
+	<package name="complainBack" namespace="/complainBack" extends="struts-default">
+		<action name="loadByCustomer" class="com.aking.control.action.ComplainBackAction"
+			method="loadByCustomer">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveComplain" class="com.aking.control.action.ComplainBackAction"
+			method="saveComplain">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delComplainByID" class="com.aking.control.action.ComplainBackAction"
+			method="delComplainByID">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadComplainByIDAction" class="com.aking.control.action.ComplainBackAction"
+			method="loadComplainByID">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 客户产品 -->
+	<package name="product" namespace="/product" extends="struts-default">
+		<action name="loadByCustomer" class="com.aking.control.action.ProductAction"
+			method="loadByCustomer">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveProduct" class="com.aking.control.action.ProductAction"
+			method="saveProduct">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delProductByID" class="com.aking.control.action.ProductAction"
+			method="delProductByID">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadProductByIDAction" class="com.aking.control.action.ProductAction"
+			method="loadProductByID">
+			<result>/index.jsp</result>
+		</action>
+		<action name="load4Combo" class="com.aking.control.action.ProductAction"
+			method="load4Combo">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 事务提醒相关操作 -->
+	<package name="affairRemind" namespace="/affairRemind" extends='struts-default'>
+		<action name="loadByCustomerAction" class="com.aking.control.action.AffairRemindAction"
+			method="loadByCustomer">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveRemindAction" class="com.aking.control.action.AffairRemindAction"
+			method="saveRemind">
+			<result>/index.jsp</result>
+		</action>
+		<action name="delRemindByID" class="com.aking.control.action.AffairRemindAction"
+			method="delRemindByID">
+			<result>/index.jsp</result>
+		</action>
+		<action name="loadRemindByIDAction" class="com.aking.control.action.AffairRemindAction"
+			method="loadRemindByID">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 注册码相关操作 -->
+	<package name="license" namespace="/license" extends='struts-default'>
+		<action name="getMachineCode" class="com.aking.control.action.LicenseAction"
+			method="getMachineCode">
+			<result>/index.jsp</result>
+		</action>
+		<action name="registerServer" class="com.aking.control.action.LicenseAction"
+			method="registerServer">
+			<result name="success" type="redirect">/main.jsp</result>
+			<result name="failure" type="redirect">/register.jsp</result>
+		</action>
+	</package>
+
+	<!-- 系统级 -->
+	<package name="system" namespace="/system" extends="struts-default">
+		<action name="initData" class="com.aking.control.service.DatabaseInit"
+			method="initDatabase">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 系统权限相关 -->
+	<package name="systemFunction" namespace="/systemFunction"
+		extends="struts-default">
+		<action name="load4Tree" class="com.aking.control.action.SystemFunctionAction"
+			method="load4Tree">
+			<result>/index.jsp</result>
+		</action>
+	</package>
+</struts>

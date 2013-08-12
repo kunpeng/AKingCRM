@@ -1,0 +1,24 @@
+#*********general init records**************
+
+# truncate records
+
+truncate table crm_city;
+truncate table crm_province;
+truncate table crm_country;
+
+# add country records
+insert into crm_country (sid,code,memo,name) values ('001','CN','中国','中国');
+insert into crm_country (sid,code,memo,name) values ('014','US','美国','美国');
+
+# add province records
+insert into crm_province (sid,code,name,country_id) values ('010','BJ','北京','001');
+insert into crm_province (sid,code,name,country_id) values ('028','SC','四川','001');
+
+# add city records
+insert into crm_city (sid,code,name,province_id) values ('0101','DC','东城区','010');
+insert into crm_city (sid,code,name,province_id) values ('0102','XC','西城区','010');
+insert into crm_city (sid,code,name,province_id) values ('0103','HD','海淀区','010');
+insert into crm_city (sid,code,name,province_id) values ('0281','CD','成都市','028');
+insert into crm_city (sid,code,name,province_id) values ('0282','GA','广安市','028');
+
+#*********customise init records**************
